@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='applications.css') }}">
+</head>
+
+<body>
+
+    <h1>Applications</h1>
+
+    <!-- ========================= -->
+    <!-- ADD / UPDATE FORM -->
+    <!-- ========================= -->
+
+    {% if application %}
+
+    <h2>Update Application</h2>
+
+    <form method="POST" action="/update_application/{{ application[0] }}">
+
+        <input type="number" name="applicant_id" value="{{ application[1] }}" required>
+
+        <input type="number" name="job_id" value="{{ application[2] }}" required>
+
+        <input type="text" name="status" value="{{ application[3] }}" required>
+
+        <button type="submit">
+            Update
+        </button>
+
+    </form>
+
+
+    {% else %}
+
+    <h2>Add Application</h2>
+
+    <form method="POST" action="/add_application">
+
+        <input type="number" name="applicant_id" placeholder="Applicant ID" required>
+
+        <input type="number" name="job_id" placeholder="Job ID" required>
+
+        <input type="text" name="status" placeholder="Status" required>
+
+        <input type="datetime-local" name="timestamp" class="timestamp" required>
+
+        <button type="submit">
+            Add
+        </button>
+
+    </form>
+
+    {% endif %}
+
+    <br><br>
+
+    <!-- ========================= -->
+    <!-- APPLICATIONS TABLE -->
+    <!-- ========================= -->
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>ID</th>
+            <th>Applicant</th>
+            <th>Job</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for row in data %}
+
+        <tr>
+
+            <td>{{ row[0] }}</td>
+
+            <td>{{ row[1] }}</td>
+
+            <td>{{ row[2] }}</td>
+
+            <td>{{ row[3] }}</td>
+
+            <td>
+
+                <a href="/applications/{{ row[0] }}">
+                    Edit
+                </a> |
+
+                <a href="/delete_application/{{ row[0] }}">
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/">
+        Back to Home
+    </a>
+
+</body>
+
+</html>

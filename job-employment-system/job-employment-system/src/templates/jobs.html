@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='job.css') }}">
+</head>
+
+<body>
+
+    <h1>Jobs</h1>
+
+    <!-- ========================= -->
+    <!-- ADD / UPDATE FORM -->
+    <!-- ========================= -->
+
+    {% if job %}
+
+    <h2>Update Job</h2>
+
+    <form method="POST" action="/update_job/{{ job[0] }}">
+
+        <input type="text" name="job_title" value="{{ job[1] }}" required>
+
+        <input type="text" name="company" value="{{ job[2] }}" required>
+
+        <input type="number" name="salary" value="{{ job[3] }}" required>
+
+        <button type="submit">
+            Update
+        </button>
+
+    </form>
+
+    {% else %}
+
+    <h2>Add Job</h2>
+
+    <form method="POST" action="/add_job">
+
+        <input type="text" name="job_title" placeholder="Job Title" required>
+
+        <input type="text" name="company" placeholder="Company" required>
+
+        <input type="number" name="salary" placeholder="Salary" required>
+
+        <button type="submit">
+            Add
+        </button>
+
+    </form>
+
+    {% endif %}
+
+    <br><br>
+
+    <!-- ========================= -->
+    <!-- JOBS TABLE -->
+    <!-- ========================= -->
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>ID</th>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for row in data %}
+
+        <tr>
+
+            <td>{{ row[0] }}</td>
+
+            <td>{{ row[1] }}</td>
+
+            <td>{{ row[2] }}</td>
+
+            <td>{{ row[3] }}</td>
+
+            <td class="actions">
+
+    <a href="/jobs/{{ row[0] }}" class="edit">
+         Edit
+    </a>
+
+    <a href="/delete_job/{{ row[0] }}" class="delete">
+         Delete
+    </a>
+
+</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+      <a href="/" class="back">
+    ← Back to Home
+</a>
+
+</body>
+
+</html>

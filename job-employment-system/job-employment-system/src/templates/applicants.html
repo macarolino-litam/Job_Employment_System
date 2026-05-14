@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Applicants</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='applican.css') }}">
+</head>
+
+<body>
+
+    <h1>Applicants</h1>
+
+    <!-- ========================= -->
+    <!-- ADD / UPDATE FORM -->
+    <!-- ========================= -->
+
+    {% if applicant %}
+
+    <h2>Update Applicant</h2>
+
+    <form method="POST" action="/update_applicant/{{ applicant[0] }}">
+
+        <input type="text" name="name" value="{{ applicant[1] }}" required>
+
+        <input type="email" name="email" value="{{ applicant[2] }}" required>
+
+        <input type="text" name="phone" value="{{ applicant[3] }}" required>
+
+        <input type="datetime-local" name="timestamp" class="timestamp" required>
+
+        <button type="submit">
+            Update
+        </button>
+
+    </form>
+
+    {% else %}
+
+    <h2>Add Applicant</h2>
+
+    <form method="POST" action="/add_applicant">
+
+        <input type="text" name="name" placeholder="Enter Name" required>
+
+        <input type="email" name="email" placeholder="Enter Email" required>
+
+        <input type="text" name="phone" placeholder="Enter Phone" required>
+
+        <input type="datetime-local" name="timestamp" class="timestamp" required>
+
+        <button type="submit">
+            Add
+        </button>
+
+    </form>
+
+    {% endif %}
+
+    <br><br>
+
+    <!-- ========================= -->
+    <!-- APPLICANTS TABLE -->
+    <!-- ========================= -->
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for row in data %}
+
+        <tr>
+
+            <td>{{ row[0] }}</td>
+
+            <td>{{ row[1] }}</td>
+
+            <td>{{ row[2] }}</td>
+
+            <td>{{ row[3] }}</td>
+
+            <td class="actions">
+
+    <a href="/applicants/{{ row[0] }}" class="edit">
+         Edit
+    </a>
+
+    <a href="/delete_applicant/{{ row[0] }}" class="delete">
+         Delete
+    </a>
+
+</td>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+   <a href="/" class="back">
+    ← Back to Home
+</a>
+
+</body>
+
+</html>
