@@ -1,4 +1,4 @@
-# a. INTRODUCTION
+# INTRODUCTION
 
 ### BACKGROUND
     Organizations often find themselves buried under a mountain of spreadsheets, scattered emails, and fragmented candidate data due to the growing numbers of Job applicants. Because of this, the Job Employment System was made not just to serve business to get organized and prevent losing promising candidates, but also to make job applications easy for applicants. With this web based application built with Python and MySQL, a business can easily track every applicant in an organized manner. This will turn the messy and confusing piles of applications to a smooth and organized system that will surely save time and make sure that every applicant will not be missed out.
@@ -12,7 +12,7 @@
 ### TARGET USERS
     The target users include HR staff, hiring managers, recruiters, and small business owners. The HR staff gets to efficiently manage the job applicants and job postings while the hiring manager will easily track the status of the applicant through the system. Also, the system gives recruiters a single home base for all their hiring jobs and allows small business owners to maintain their hiring records without relying on an HR.
 
-# b. PROBLEM OBJECTIVES
+# PROBLEM OBJECTIVES
 
 ### Primary Objective
     The primary objective of this model is to build a useful job employment application that will support management of numerous applications and the applicants itself with consistent data storage.
@@ -20,7 +20,7 @@
 ### Secondary Objective
     The secondary objectives of this application is to provide a fully functional CRUD operations and reliable database connectivity using MySQL, support basic search and listing functions through filterable views, and maintain database integrity through relational design and foreign key constraints.
 
-# c. BUSINESS RULES
+# BUSINESS RULES
 
 ## Detailed Bussiness Logic
 User Authentication: the system routes are publicly accessible, meaning that it does not support user authentication.
@@ -56,7 +56,7 @@ Database Connection Settings: The application connects to a local MySQL database
     - Dependencies must be installed after activation of the virtual environment and before the installation to ensure consistent behavior.
 
 
-# d. Project Diagrams
+# Project Diagrams
 
 ![Entity Relationship Diagram](docs/diagrams/erd.png)
     - `applicants`: stores applicant personal details.
@@ -68,7 +68,7 @@ Database Connection Settings: The application connects to a local MySQL database
     - `jobs`: (`job_id`, `job_title`, `company`, `salary`)
     - `applications`: (`application_id`, `applicant_id`, `job_id`, `status`, `created_at`)
 
-# e. Project Overview
+# Project Overview
 
 ### Architechture and Design Pattern
 The application follows a simplified MVC-inspired structure:
@@ -85,7 +85,7 @@ The application follows a simplified MVC-inspired structure:
 - `database/schema.sql`: Defines the database schema.
 - `database/initial_data.sql`: Supplies sample data.
 
-# f. Setup Instructions
+# Setup Instructions
 
 ### Prerequisites
 - Python 3.6 or higher
@@ -123,7 +123,7 @@ This section provides the step by step installation and configuration process fr
 8. To be able to access the application, open the browser and visit the localhost:
     http://127.0.0.1:5000
 
-# g. Team Members and Roles
+# Team Members and Roles
 | Team Member               | Role                | Responsibilities                                               |
 |---------------------------|---------------------|----------------------------------------------------------------|
 | Marc Christan L. Carolino | Project Lead        | Requirements gathering, documentation, and application testing |
@@ -137,7 +137,7 @@ This section provides the step by step installation and configuration process fr
 
 
 
-# h. Dependencies
+# Dependencies
 Required Python Libraries with Versions
 - Flask 3.1.3
 - mysql-connector-python
