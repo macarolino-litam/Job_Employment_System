@@ -1,32 +1,32 @@
-### a. INTRODUCTION
+# INTRODUCTION
 
-# BACKGROUND
+### BACKGROUND
     Organizations often find themselves buried under a mountain of spreadsheets, scattered emails, and fragmented candidate data due to the growing numbers of Job applicants. Because of this, the Job Employment System was made not just to serve business to get organized and prevent losing promising candidates, but also to make job applications easy for applicants. With this web based application built with Python and MySQL, a business can easily track every applicant in an organized manner. This will turn the messy and confusing piles of applications to a smooth and organized system that will surely save time and make sure that every applicant will not be missed out.
 
-# PROBLEM STATEMENT
+### PROBLEM STATEMENT
     A lot of businesses struggle with hiring because of unorganized emails and confusing spreadsheets to manage job seekers. Due to this inefficient approach, businesses tend to respond late, get confused, or even lose the resumes submitted. Without having an efficient tool in hiring job seekers, promising job seekers often become frustrated and decide to go elsewhere because the organization is too slow in responding to their applications. The Job Employment System solves this problem by putting all hiring information into one digital home, making it impossible to lose track of the applicants and making the information accessible to ensure that the hiring process will become fast and efficient.
 
-# SCOPE
+### SCOPE
     The system has basic CRUD (Create, Read, Update, and Delete) operations for managing applicants, jobposts, and application status with precise data and time stamps. The job application was developed using HTML and CSS for user interface and ensures that the data will be reliable by having a direct connection with MySQL database, which is stored in structured relational tables. However, the system is only limited to basic data management and connectivity, it does not yet include file uploads like uploading their resume, and security functions like user authentication or role-based access control.
 
-# TARGET USERS
+### TARGET USERS
     The target users include HR staff, hiring managers, recruiters, and small business owners. The HR staff gets to efficiently manage the job applicants and job postings while the hiring manager will easily track the status of the applicant through the system. Also, the system gives recruiters a single home base for all their hiring jobs and allows small business owners to maintain their hiring records without relying on an HR.
 
-### b. PROBLEM OBJECTIVES
+# PROBLEM OBJECTIVES
 
-# Primary Objective
+### Primary Objective
     The primary objective of this model is to build a useful job employment application that will support management of numerous applications and the applicants itself with consistent data storage.
 
-# Secondary Objective
+### Secondary Objective
     The secondary objectives of this application is to provide a fully functional CRUD operations and reliable database connectivity using MySQL, support basic search and listing functions through filterable views, and maintain database integrity through relational design and foreign key constraints.
 
-### c. BUSINESS RULES
+# BUSINESS RULES
 
-# Detailed Bussiness Logic
+## Detailed Bussiness Logic
 User Authentication: the system routes are publicly accessible, meaning that it does not support user authentication.
 Database Connection Settings: The application connects to a local MySQL database using credentials defined in src/db.py
 
-# CRUD Operation Constraints
+### CRUD Operation Constraints
     - Items such as applicants, jobs and applications can be added, updated or deleted.
     - Applications found in the database can be viewed only.
     - When a main record is deleted, all smaller blocks of information associated with the main record are deleted as well.
@@ -34,29 +34,29 @@ Database Connection Settings: The application connects to a local MySQL database
     - If a Job or an Applicant is created, the Primary Key (the unique ID number of a Job or an Applicant) cannot be changed.
 
 
-# Data Validation Rules:
+### Data Validation Rules:
     - Name, email and phone number should be provided for adding/update of applicants.
     - On adding and editing a job, job title, job company and job salary should be provided.
     - The status of the application should have a proper status such as Pending, Accepted or Rejected.
     - The implementation relies on the InputData that is presented in the form on the Client, with minimal server-side validation.
 
-# Access Control Levels:
+### Access Control Levels:
     - Today there are no access control levels in the system.
 
-### Constraints
+## Constraints
     - Application should have been built with Python 3 and use MySQL with mysql-connector-python.
     - Database connectivity requires a local MySQL server (XAMPP or other server).
     - Before running the application, the database schema has to be imported.
     - This application is not meant to be used for high volume production.
 
-### Conditions
+## Conditions
     - The MySQL service should be running prior to running the Flask application.
     - The database needs to be created, and should contain the tables necessary.
     - The user should visit app at: http://localhost:5000.
     - Dependencies must be installed after activation of the virtual environment and before the installation to ensure consistent behavior.
 
 
-### d. Project Diagrams
+# Project Diagrams
 
 ![Entity Relationship Diagram](docs/diagrams/erd.png)
     - `applicants`: stores applicant personal details.
@@ -68,15 +68,15 @@ Database Connection Settings: The application connects to a local MySQL database
     - `jobs`: (`job_id`, `job_title`, `company`, `salary`)
     - `applications`: (`application_id`, `applicant_id`, `job_id`, `status`, `created_at`)
 
-### e. Project Overview
+# Project Overview
 
-# Architechture and Design Pattern
+### Architechture and Design Pattern
 The application follows a simplified MVC-inspired structure:
 - Model: MySQL database schema and `src/db.py` connection logic.
 - View: HTML templates in `src/templates` provide user interface pages.
 - Controller: `src/routes.py` handles incoming requests, interacts with the database, and returns rendered pages.
 
-# Key Components
+### Key Components
 - `src/app.py`: Initializes the Flask application and registers routes.
 - `src/routes.py`: Defines the main application routes and CRUD operations.
 - `src/db.py`: Establishes the MySQL connection.
@@ -85,16 +85,16 @@ The application follows a simplified MVC-inspired structure:
 - `database/schema.sql`: Defines the database schema.
 - `database/initial_data.sql`: Supplies sample data.
 
-### f. Setup Instructions
+# Setup Instructions
 
-# Prerequisites
+### Prerequisites
 - Python 3.6 or higher
 - MySQL server (XAMPP recommended for Windows)
 - Git
 - pip (Python package installer)
 - Web browser (Chrome, Firefox, Edge)
 
-# Installation and Configuration
+### Installation and Configuration
 This section provides the step by step installation and configuration process from scratch.
 
 1. First, we prepare the environment and clone the source by pulling the latest version of the repository and entering the project root.
@@ -123,8 +123,7 @@ This section provides the step by step installation and configuration process fr
 8. To be able to access the application, open the browser and visit the localhost:
     http://127.0.0.1:5000
 
-### g. Team Members and Roles
-|---------------------------|---------------------|----------------------------------------------------------------|
+# Team Members and Roles
 | Team Member               | Role                | Responsibilities                                               |
 |---------------------------|---------------------|----------------------------------------------------------------|
 | Marc Christan L. Carolino | Project Lead        | Requirements gathering, documentation, and application testing |
@@ -136,7 +135,9 @@ This section provides the step by step installation and configuration process fr
 | Lourd Kenneth P. Hugo     | Frontend Developer  | HTML/CSS design and page layout, user interface styling        |
 |---------------------------|---------------------|----------------------------------------------------------------|
 
-### h. Dependencies
+
+
+# Dependencies
 Required Python Libraries with Versions
 - Flask 3.1.3
 - mysql-connector-python
