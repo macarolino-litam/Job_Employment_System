@@ -1,5 +1,6 @@
 -- SAMPLE DATA FOR CCCS105 DATABASE
 -- Import this file after the database/schema already exists.
+USE CCCS105;
 
 -- SAMPLE DATA (50+ RECORDS)
 
