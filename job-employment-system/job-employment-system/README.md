@@ -124,7 +124,6 @@ This section provides the step by step installation and configuration process fr
     http://127.0.0.1:5000
 
 # g. Team Members and Roles
-|---------------------------|---------------------|----------------------------------------------------------------|
 | Team Member               | Role                | Responsibilities                                               |
 |---------------------------|---------------------|----------------------------------------------------------------|
 | Marc Christan L. Carolino | Project Lead        | Requirements gathering, documentation, and application testing |
