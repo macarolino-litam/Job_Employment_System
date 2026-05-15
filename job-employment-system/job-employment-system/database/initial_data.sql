@@ -1,30 +1,5 @@
--- CREATE DATABASE
-CREATE DATABASE IF NOT EXISTS CCCS105;
-USE CCCS105;
-
--- TABLES
-CREATE TABLE applicants (
-    applicant_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100),
-    phone VARCHAR(20)
-);
-
-CREATE TABLE jobs (
-    job_id INT AUTO_INCREMENT PRIMARY KEY,
-    job_title VARCHAR(100),
-    company VARCHAR(100),
-    salary DECIMAL(10,2)
-);
-
-CREATE TABLE applications (
-    application_id INT AUTO_INCREMENT PRIMARY KEY,
-    applicant_id INT,
-    job_id INT,
-    status VARCHAR(50),
-    FOREIGN KEY (applicant_id) REFERENCES applicants(applicant_id) ON DELETE CASCADE,
-    FOREIGN KEY (job_id) REFERENCES jobs(job_id) ON DELETE CASCADE
-);
+-- SAMPLE DATA FOR CCCS105 DATABASE
+-- Import this file after the database/schema already exists.
 
 -- SAMPLE DATA (50+ RECORDS)
 
