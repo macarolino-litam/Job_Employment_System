@@ -127,7 +127,7 @@ This section provides the step by step installation and configuration process fr
 | Team Member               | Role                | Responsibilities                                               |
 |---------------------------|---------------------|----------------------------------------------------------------|
 | Marc Christan L. Carolino | Project Lead        | Requirements gathering, documentation, and application testing |
-|---------------------------|---------------------|----------------------------------------------------------------|
+|                           |                     |                                                                |
 | Laurence I. Echipare      | Backend Developer   | Flask route and database integration implementation            |
 |---------------------------|---------------------|----------------------------------------------------------------|
 | Laurence I. Echipare      | Database Designer   | Schema design, sample data creation, and database setup        |
